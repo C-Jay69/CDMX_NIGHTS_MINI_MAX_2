@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CDMXNights – Navigate Mexico City nightlife chaos with curated bars, clubs, mezcal dens, gaming spots, and community events." />
+  <meta name="keywords" content="Mexico City nightlife 2025, CDMX bars, clubs, Roma Norte, Polanco lounges, mezcal, casinos, events" />
+  <title>CDMXNights | Navigate CDMX Chaos One Drink at a Time</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --sunset: #ff7a3d;
+      --neon: #12f7d6;
+      --deep: #0f172a;
+      --jungle: #0f5132;
+      --shadow: rgba(0,0,0,0.45);
+    }
+    .bg-grid {
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .glass {
+      background: rgba(15,23,42,0.65);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .clip-hero {
+      background: linear-gradient(120deg, rgba(15,23,42,0.7), rgba(15,23,42,0.15)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .pulse-ring::after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 999px;
+      border: 2px solid var(--neon);
+      opacity: 0.5;
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.5; }
+      70% { transform: scale(1.1); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-deep text-white" style="background: radial-gradient(circle at 15% 20%, rgba(18,247,214,0.1), transparent 35%), radial-gradient(circle at 80% 0%, rgba(255,122,61,0.12), transparent 40%), #0b1222;">
+  <header class="sticky top-0 z-30 backdrop-blur border-b border-white/10 bg-deep/70">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="relative w-11 h-11 rounded-full bg-gradient-to-br from-[var(--sunset)] to-[var(--neon)] flex items-center justify-center pulse-ring">
+          <span class="font-black text-deep text-xl">CD</span>
+        </div>
+        <div>
+          <p class="font-semibold text-lg">CDMXNights</p>
+          <p class="text-xs text-white/70" data-lang-en="Navigate CDMX Chaos One Drink at a Time" data-lang-es="Domina el caos de la CDMX, trago a trago">Navigate CDMX Chaos One Drink at a Time</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 text-sm">
+        <a href="#events" class="px-3 py-2 rounded-full border border-white/20 hover:border-[var(--neon)] transition" data-lang-en="Events" data-lang-es="Eventos">Events</a>
+        <button id="langToggle" class="px-3 py-2 rounded-full border border-white/20 hover:border-[var(--neon)] transition">EN / ES</button>
+        <a href="#submit" class="px-4 py-2 rounded-full bg-[var(--sunset)] hover:brightness-110 transition font-semibold">Submit a Spot</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="clip-hero text-white py-20 md:py-28 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-deep"></div>
+      <div class="mx-auto max-w-6xl px-4 relative grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.3em] text-[var(--neon)] mb-4" data-lang-en="Mexico City Nightlife" data-lang-es="Vida nocturna en CDMX">Mexico City Nightlife</p>
+          <h1 class="text-4xl md:text-5xl font-black leading-tight mb-6" data-lang-en="Navigate CDMX Chaos One Drink at a Time" data-lang-es="Domina el caos de la CDMX, trago a trago">Navigate CDMX Chaos One Drink at a Time</h1>
+          <p class="text-lg text-white/80 mb-8 max-w-2xl" data-lang-en="Bars, clubs, mezcal dens, low-key gaming, and now community events—sourced by locals, vetted by us." data-lang-es="Bares, clubes, mezcalerías, gaming discreto y ahora eventos comunitarios; curados por locales y pulidos por nosotros.">Bars, clubs, mezcal dens, low-key gaming, and now community events—sourced by locals, vetted by us.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#spots" class="px-5 py-3 rounded-full bg-[var(--neon)] text-deep font-bold shadow-lg shadow-[var(--neon)]/30 hover:translate-y-[-1px] transition" data-lang-en="View Hotspots" data-lang-es="Ver hotspots">View Hotspots</a>
+            <a href="#events" class="px-5 py-3 rounded-full border border-white/30 hover:border-[var(--sunset)] transition" data-lang-en="Events & Calendar" data-lang-es="Eventos y calendario">Events & Calendar</a>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-4 text-sm text-white/70">
+            <span class="px-3 py-1 rounded-full bg-black/40 border border-white/10" data-lang-en="Sassy, not sterile" data-lang-es="Sarcástico, no serio">Sassy, not sterile</span>
+            <span class="px-3 py-1 rounded-full bg-black/40 border border-white/10" data-lang-en="Email-verified submissions" data-lang-es="Envíos verificados por email">Email-verified submissions</span>
+            <span class="px-3 py-1 rounded-full bg-black/40 border border-white/10" data-lang-en="Sponsored highlights" data-lang-es="Destacados patrocinados">Sponsored highlights</span>
+          </div>
+        </div>
+        <div class="glass rounded-3xl p-5 bg-grid border border-white/10">
+          <div class="aspect-video rounded-2xl overflow-hidden mb-4 shadow-2xl shadow-black/50 border border-white/10">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/ToG0ZC6MdE8?autoplay=1&mute=1&controls=0&loop=1&playlist=ToG0ZC6MdE8" allow="autoplay; encrypted-media" title="CDMX nightlife"></iframe>
+          </div>
+          <p class="text-sm text-white/70 mb-2" data-lang-en="Smooth hero scroll with Condesa rooftops, Zona Rosa energy, casino glamour, and live events." data-lang-es="Scroll suave con azoteas de Condesa, energía en Zona Rosa, glamour de casino y eventos en vivo.">Smooth hero scroll with Condesa rooftops, Zona Rosa energy, casino glamour, and live events.</p>
+          <div class="flex items-center gap-3 text-xs text-white/60">
+            <span class="px-2 py-1 rounded-full bg-[var(--sunset)]/30 text-[var(--neon)] font-semibold">BETA</span>
+            <span data-lang-en="WordPress + HivePress ready" data-lang-es="Listo para WordPress + HivePress">WordPress + HivePress ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="spots" class="py-16 bg-deep">
+      <div class="mx-auto max-w-6xl px-4 flex items-center justify-between mb-8">
+        <div>
+          <p class="text-sm uppercase tracking-[0.25em] text-[var(--sunset)]" data-lang-en="Curated & Community" data-lang-es="Curado y comunitario">Curated & Community</p>
+          <h2 class="text-3xl font-bold" data-lang-en="Fresh drops from locals + mods" data-lang-es="Nuevos hallazgos de locales + mods">Fresh drops from locals + mods</h2>
+          <p class="text-white/70 max-w-2xl" data-lang-en="We polish your rants with graphics, embeds, and credit. Ratings keep the vibe honest." data-lang-es="Pulimos tus comentarios con gráficos, embeds y crédito. Las valoraciones mantienen la vibra honesta.">We polish your rants with graphics, embeds, and credit. Ratings keep the vibe honest.</p>
+        </div>
+        <div class="flex gap-2 text-xs">
+          <span class="px-3 py-1 rounded-full bg-[var(--neon)]/20 text-[var(--neon)]">Sponsored ready</span>
+          <span class="px-3 py-1 rounded-full bg-[var(--sunset)]/20 text-[var(--sunset)]">Ad slots</span>
+        </div>
+      </div>
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-2xl p-4 flex flex-col gap-3 border border-white/5">
+          <div class="h-40 rounded-xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1514361892635-6e122620e4d1?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover" alt="Roma Norte mezcal" />
+            <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-xs bg-black/60 border border-white/10">Roma Norte · Mezcal</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold" data-lang-en="La Sombra Mezcal Den" data-lang-es="La Sombra Mezcalería">La Sombra Mezcal Den</h3>
+            <span class="text-[var(--neon)] text-sm">★ 4.7</span>
+          </div>
+          <p class="text-sm text-white/70" data-lang-en="Candlelit agave cave. Smoky flights, no DJs, just vinyl." data-lang-es="Cueva de agave a la luz de velas. Vuelos ahumados, sin DJs, solo vinilos.">Candlelit agave cave. Smoky flights, no DJs, just vinyl.</p>
+          <p class="text-xs text-white/50" data-lang-en="Discovered by @TequilaQueenMaria" data-lang-es="Descubierto por @TequilaQueenMaria">Discovered by @TequilaQueenMaria</p>
+          <div class="flex gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-[var(--sunset)]/30">Late-night</span>
+            <span class="px-2 py-1 rounded-full bg-[var(--neon)]/20 text-[var(--neon)]">Safe walk</span>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-4 flex flex-col gap-3 border border-white/5">
+          <div class="h-40 rounded-xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1456743625079-86a50f2396b9?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover" alt="Polanco lounge" />
+            <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-xs bg-black/60 border border-white/10">Polanco · Lounge</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold" data-lang-en="Velvet Terrace" data-lang-es="Terraza Velvet">Velvet Terrace</h3>
+            <span class="text-[var(--neon)] text-sm">★ 4.5</span>
+          </div>
+          <p class="text-sm text-white/70" data-lang-en="Posh rooftop, zero cover weekdays, mezcal negronis, skyline flex." data-lang-es="Azotea elegante, sin cover entre semana, negronis de mezcal, vista skyline.">Posh rooftop, zero cover weekdays, mezcal negronis, skyline flex.</p>
+          <p class="text-xs text-white/50" data-lang-en="Discovered by @SkylineSergio" data-lang-es="Descubierto por @SkylineSergio">Discovered by @SkylineSergio</p>
+          <div class="flex gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-[var(--neon)]/20 text-[var(--neon)]">Sponsored</span>
+            <span class="px-2 py-1 rounded-full bg-[var(--sunset)]/30">Rooftop</span>
+          </div>
+        </div>
+        <div class="glass rounded-2xl p-4 flex flex-col gap-3 border border-white/5">
+          <div class="h-40 rounded-xl overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1495570175800-9931a4bdf5d8?auto=format&fit=crop&w=900&q=80" class="w-full h-full object-cover" alt="Centro cantina" />
+            <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-xs bg-black/60 border border-white/10">Centro · Cantina</span>
+          </div>
+          <div class="flex items-center justify-between">
+            <h3 class="font-semibold" data-lang-en="Cantina del Caos" data-lang-es="Cantina del Caos">Cantina del Caos</h3>
+            <span class="text-[var(--neon)] text-sm">★ 4.2</span>
+          </div>
+          <p class="text-sm text-white/70" data-lang-en="Brassy, loud, cheap. Order the michelada gigante, pray to the mariachis." data-lang-es="Ruidosa y barata. Pide la michelada gigante, reza a los mariachis.">Brassy, loud, cheap. Order the michelada gigante, pray to the mariachis.</p>
+          <p class="text-xs text-white/50" data-lang-en="Discovered by @ChaosCarlos" data-lang-es="Descubierto por @ChaosCarlos">Discovered by @ChaosCarlos</p>
+          <div class="flex gap-2 text-xs">
+            <span class="px-2 py-1 rounded-full bg-[var(--sunset)]/30">Cash only</span>
+            <span class="px-2 py-1 rounded-full bg-[var(--neon)]/20 text-[var(--neon)]">Crowded</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-black/40 border-t border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-3 gap-8">
+        <div class="glass p-5 rounded-2xl border border-white/10">
+          <h3 class="font-semibold text-xl mb-3" data-lang-en="Community-first, credit always" data-lang-es="Comunidad primero, crédito siempre">Community-first, credit always</h3>
+          <p class="text-white/70 text-sm" data-lang-en="Your gem stays yours. We credit every discovery and keep ratings transparent." data-lang-es="Tu hallazgo sigue siendo tuyo. Damos crédito y mantenemos valoraciones transparentes.">Your gem stays yours. We credit every discovery and keep ratings transparent.</p>
+        </div>
+        <div class="glass p-5 rounded-2xl border border-white/10">
+          <h3 class="font-semibold text-xl mb-3" data-lang-en="WordPress + HivePress backbone" data-lang-es="Infraestructura WordPress + HivePress">WordPress + HivePress backbone</h3>
+          <p class="text-white/70 text-sm" data-lang-en="Directory, user dashboards, monetization ready. Sponsored highlights, free entry tier." data-lang-es="Directorio, paneles de usuario, monetización lista. Destacados patrocinados, nivel gratis.">Directory, user dashboards, monetization ready. Sponsored highlights, free entry tier.</p>
+        </div>
+        <div class="glass p-5 rounded-2xl border border-white/10">
+          <h3 class="font-semibold text-xl mb-3" data-lang-en="Safety + maps" data-lang-es="Seguridad + mapas">Safety + maps</h3>
+          <p class="text-white/70 text-sm" data-lang-en="Map each listing; offer Uber/DiDi links for rides home. Keep it light and fast." data-lang-es="Mapea cada lugar; ofrece enlaces Uber/DiDi para volver a casa. Ligero y rápido.">Map each listing; offer Uber/DiDi links for rides home. Keep it light and fast.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="map" class="py-16 bg-deep">
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-sm uppercase tracking-[0.25em] text-[var(--neon)]" data-lang-en="Safety-minded" data-lang-es="Pensado en seguridad">Safety-minded</p>
+          <h3 class="text-3xl font-bold mb-3" data-lang-en="Map it, then move" data-lang-es="Mapea y muévete">Map it, then move</h3>
+          <p class="text-white/70 mb-4" data-lang-en="Quick map for bearings; add Uber/DiDi or Google Maps deep links on listings." data-lang-es="Mapa rápido; agrega enlaces profundos a Uber/DiDi o Google Maps en cada ficha.">Quick map for bearings; add Uber/DiDi or Google Maps deep links on listings.</p>
+          <div class="flex gap-3 text-sm">
+            <a href="#submit" class="px-4 py-2 rounded-full bg-[var(--neon)] text-deep font-semibold" data-lang-en="Add your spot" data-lang-es="Agrega tu spot">Add your spot</a>
+            <button class="px-4 py-2 rounded-full border border-white/20" onclick="alert('Embed Uber/DiDi deep links in production')" data-lang-en="Plan a ride" data-lang-es="Planea tu ride">Plan a ride</button>
+          </div>
+        </div>
+        <div class="glass rounded-2xl border border-white/10 overflow-hidden">
+          <iframe class="w-full h-80" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120454.51140978423!2d-99.26048515120149!3d19.390733686506787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ffe0c3edb12f%3A0x540d0bafcd1e5bc4!2sMexico%20City%2C%20CDMX%2C%20Mexico!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="py-16 bg-black/50 border-t border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 flex flex-col gap-10">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-[var(--sunset)]" data-lang-en="Events" data-lang-es="Eventos">Events</p>
+            <h3 class="text-3xl font-bold" data-lang-en="Calendar + Immediate upcomers" data-lang-es="Calendario + Próximos inmediatos">Calendar + Immediate upcomers</h3>
+            <p class="text-white/70" data-lang-en="Track the next 7 days, tap a date, see every detail—type, time, cost, contact, and pics." data-lang-es="Sigue los próximos 7 días, toca una fecha y ve todo: tipo, hora, costo, contacto e imágenes.">Track the next 7 days, tap a date, see every detail—type, time, cost, contact, and pics.</p>
+          </div>
+          <div class="flex gap-2 text-sm">
+            <a href="#eventForm" class="px-4 py-2 rounded-full bg-[var(--neon)] text-deep font-semibold" data-lang-en="Upload your event" data-lang-es="Sube tu evento">Upload your event</a>
+            <button class="px-4 py-2 rounded-full border border-white/20" onclick="document.getElementById('calendarPicker').focus();" data-lang-en="Open calendar" data-lang-es="Abrir calendario">Open calendar</button>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div class="glass rounded-2xl p-5 border border-white/10 space-y-4 lg:col-span-2">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div>
+                <p class="text-sm text-white/60" data-lang-en="Select a date to see events" data-lang-es="Selecciona una fecha para ver eventos">Select a date to see events</p>
+                <input id="calendarPicker" type="date" class="mt-1 px-3 py-2 rounded-lg bg-black/40 border border-white/15 text-white" />
+              </div>
+              <div class="text-sm text-white/60" data-lang-en="Immediate upcomers (next 7 days)" data-lang-es="Próximos inmediatos (7 días)">Immediate upcomers (next 7 days)</div>
+            </div>
+            <div id="upcomingList" class="grid md:grid-cols-2 gap-4"></div>
+          </div>
+
+          <div class="glass rounded-2xl p-5 border border-white/10 space-y-3" id="eventDetail">
+            <p class="text-xs uppercase tracking-[0.2em] text-[var(--neon)]" data-lang-en="Event detail" data-lang-es="Detalle del evento">Event detail</p>
+            <h4 class="text-xl font-bold" id="detailTitle">Pick a date or event</h4>
+            <p class="text-white/70 text-sm" id="detailMeta"></p>
+            <p class="text-white/60 text-sm" id="detailLocation"></p>
+            <p class="text-white/60 text-sm" id="detailCost"></p>
+            <p class="text-white/60 text-sm" id="detailContact"></p>
+            <p class="text-white/70 text-sm" id="detailDescription"></p>
+            <div class="aspect-video rounded-xl overflow-hidden border border-white/10">
+              <img id="detailImage" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1525198124871-0f9248947651?auto=format&fit=crop&w=900&q=80" alt="Event image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="glass p-6 rounded-2xl border border-white/10" id="eventForm">
+          <h4 class="text-2xl font-bold mb-2" data-lang-en="Upload an event" data-lang-es="Sube un evento">Upload an event</h4>
+          <p class="text-white/70 text-sm mb-4" data-lang-en="Add details; we verify by email if needed. Calendly/Google Calendar can plug in later." data-lang-es="Agrega detalles; verificamos por email si es necesario. Calendly/Google Calendar se puede conectar después.">Add details; we verify by email if needed. Calendly/Google Calendar can plug in later.</p>
+          <form id="newEventForm" class="grid md:grid-cols-2 gap-3 text-sm">
+            <label class="flex flex-col gap-1">Name<input name="name" required class="p-2 rounded bg-black/50 border border-white/10" placeholder="Rooftop Sunset Sessions" /></label>
+            <label class="flex flex-col gap-1">Type<input name="type" required class="p-2 rounded bg-black/50 border border-white/10" placeholder="DJ set / Mezcal pop-up" /></label>
+            <label class="flex flex-col gap-1">Date<input name="date" required type="date" class="p-2 rounded bg-black/50 border border-white/10" /></label>
+            <label class="flex flex-col gap-1">Time<input name="time" required type="time" class="p-2 rounded bg-black/50 border border-white/10" /></label>
+            <label class="flex flex-col gap-1">Location<input name="location" required class="p-2 rounded bg-black/50 border border-white/10" placeholder="Roma Norte" /></label>
+            <label class="flex flex-col gap-1">Cost<input name="cost" class="p-2 rounded bg-black/50 border border-white/10" placeholder="$200 MXN cover" /></label>
+            <label class="flex flex-col gap-1">Contact<input name="contact" class="p-2 rounded bg-black/50 border border-white/10" placeholder="@organizerhandle / +52..." /></label>
+            <label class="flex flex-col gap-1">Image URL<input name="image" type="url" class="p-2 rounded bg-black/50 border border-white/10" placeholder="https://..." /></label>
+            <label class="md:col-span-2 flex flex-col gap-1">Description<textarea name="description" rows="3" class="p-2 rounded bg-black/50 border border-white/10" placeholder="Why it's brilliant (or brilliantly dodgy)"></textarea></label>
+            <button type="submit" class="md:col-span-2 py-3 rounded-xl bg-[var(--sunset)] font-semibold hover:brightness-110 transition">Submit event</button>
+            <p id="eventStatus" class="md:col-span-2 text-[var(--neon)] hidden">Added! Calendar refreshed.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="submit" class="py-16 bg-black/50 border-t border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-10 items-start">
+        <div>
+          <p class="text-sm uppercase tracking-[0.25em] text-[var(--sunset)]" data-lang-en="Submit" data-lang-es="Envía">Submit</p>
+          <h3 class="text-3xl font-bold mb-3" data-lang-en="Got a spot? Drop it." data-lang-es="¿Tienes un spot? Suéltalo.">Got a spot? Drop it.</h3>
+          <p class="text-white/70 mb-5" data-lang-en="Email-verification recommended. Add pics/vids, tell us why it's brilliant (or brilliantly dodgy)." data-lang-es="Verificación por correo recomendada. Agrega fotos/videos y cuéntanos por qué es genial o peligrosamente genial.">Email-verification recommended. Add pics/vids, tell us why it's brilliant (or brilliantly dodgy).</p>
+          <div class="glass p-4 rounded-2xl border border-white/10 text-sm leading-relaxed">
+            <ul class="list-disc pl-4 space-y-2 text-white/70">
+              <li data-lang-en="Gatekeep with email verification if needed" data-lang-es="Restringe con verificación de email si es necesario">Gatekeep with email verification if needed</li>
+              <li data-lang-en="Start beta with curated listings, then open" data-lang-es="Arranca beta con listados curados, luego abre">Start beta with curated listings, then open</li>
+              <li data-lang-en="Monetize: ads + premium highlights" data-lang-es="Monetiza: ads + destacados premium">Monetize: ads + premium highlights</li>
+            </ul>
+          </div>
+        </div>
+        <form id="spotForm" class="glass p-6 rounded-2xl border border-white/10 space-y-4">
+          <div class="grid md:grid-cols-2 gap-3">
+            <label class="text-sm">Name<input name="name" required class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" placeholder="La Sombra" /></label>
+            <label class="text-sm">Neighborhood<input name="area" required class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" placeholder="Roma Norte" /></label>
+          </div>
+          <label class="text-sm">Category
+            <select name="category" class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10">
+              <option>Mezcal den</option>
+              <option>Club</option>
+              <option>Lounge</option>
+              <option>Cantina</option>
+              <option>Gaming / casino</option>
+            </select>
+          </label>
+          <label class="text-sm">Why it's brilliant (or brilliantly dodgy)
+            <textarea name="why" required class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" rows="3" placeholder="Cheap drinks, loud brass band, sketchy but fun"></textarea>
+          </label>
+          <div class="grid md:grid-cols-2 gap-3">
+            <label class="text-sm">Image URL<input name="image" type="url" class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" placeholder="https://..." /></label>
+            <label class="text-sm">Video URL (YouTube/IG)
+              <input name="video" type="url" class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" placeholder="https://youtu.be/..." />
+            </label>
+          </div>
+          <label class="text-sm">Your handle for credit<input name="credit" class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" placeholder="@TequilaQueenMaria" /></label>
+          <label class="text-sm">Email (for verification)
+            <input name="email" type="email" required class="w-full mt-1 p-2 rounded bg-black/50 border border-white/10" placeholder="you@example.com" />
+          </label>
+          <div class="flex items-center gap-2 text-xs text-white/70">
+            <input type="checkbox" id="sponsor" name="sponsor" class="accent-[var(--neon)]" />
+            <label for="sponsor">Interested in sponsored highlight</label>
+          </div>
+          <button class="w-full py-3 rounded-xl bg-[var(--sunset)] font-semibold hover:brightness-110 transition" type="submit">Submit</button>
+          <p id="formStatus" class="text-sm text-[var(--neon)] hidden">Submitted! We’ll verify & polish it.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="py-16 bg-deep">
+      <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div class="glass p-6 rounded-2xl border border-white/10 space-y-3">
+          <h3 class="text-2xl font-bold" data-lang-en="Why bother?" data-lang-es="¿Por qué molestarse?">Why bother?</h3>
+          <p class="text-white/70" data-lang-en="CDMX changes weekly. User submissions = constant updates without us chasing trends." data-lang-es="La CDMX cambia cada semana. Envíos de usuarios = actualizaciones constantes sin perseguir tendencias.">CDMX changes weekly. User submissions = constant updates without us chasing trends.</p>
+          <p class="text-white/70" data-lang-en="Crediting builds insider club energy; people return to flex their finds." data-lang-es="El crédito crea vibra de club insider; la gente vuelve a presumir sus hallazgos.">Crediting builds insider club energy; people return to flex their finds.</p>
+          <p class="text-white/70" data-lang-en="Sponsored spots keep lights on; free tier keeps funnel wide." data-lang-es="Patrocinios pagan la fiesta; nivel gratis mantiene el funnel amplio.">Sponsored spots keep lights on; free tier keeps funnel wide.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl border border-white/10 space-y-4">
+          <h4 class="font-semibold text-lg" data-lang-en="Fast framework, zero bloat" data-lang-es="Framework rápido, cero bloat">Fast framework, zero bloat</h4>
+          <ul class="text-sm text-white/70 space-y-2 list-disc pl-4">
+            <li data-lang-en="Tailwind + WordPress/HivePress integration ready" data-lang-es="Listo para integrarse con Tailwind + WordPress/HivePress">Tailwind + WordPress/HivePress integration ready</li>
+            <li data-lang-en="SEO: 'Mexico City nightlife 2025'" data-lang-es="SEO: 'vida nocturna CDMX 2025'">SEO: 'Mexico City nightlife 2025'</li>
+            <li data-lang-en="Optional Google Calendar or events feed without bloat" data-lang-es="Google Calendar opcional sin bloat">Optional Google Calendar or events feed without bloat</li>
+            <li data-lang-en="Under £500 build target" data-lang-es="Meta de presupuesto menor a £500">Under £500 build target</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-10 bg-black/70 border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between gap-4 text-sm text-white/70">
+      <div>
+        <p class="font-semibold">CDMXNights</p>
+        <p data-lang-en="Built for fast, sassy nightlife scouting." data-lang-es="Hecho para descubrir la noche rápido y con sarcasmo.">Built for fast, sassy nightlife scouting.</p>
+      </div>
+      <div class="flex gap-3">
+        <a href="#spots" class="hover:text-[var(--neon)]" data-lang-en="Listings" data-lang-es="Lugares">Listings</a>
+        <a href="#events" class="hover:text-[var(--neon)]" data-lang-en="Events" data-lang-es="Eventos">Events</a>
+        <a href="#submit" class="hover:text-[var(--neon)]" data-lang-en="Submit" data-lang-es="Enviar">Submit</a>
+        <a href="#map" class="hover:text-[var(--neon)]" data-lang-en="Safety map" data-lang-es="Mapa de seguridad">Safety map</a>
+      </div>
+      <p class="text-xs" data-lang-en="Beta concept. WordPress/HivePress backbone recommended." data-lang-es="Concepto beta. Recomendado WordPress/HivePress.">Beta concept. WordPress/HivePress backbone recommended.</p>
+    </div>
+  </footer>
+
+  <script>
+    const langToggle = document.getElementById('langToggle');
+    let currentLang = 'en';
+    const switchLanguage = () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      document.querySelectorAll('[data-lang-en]').forEach(el => {
+        const text = el.getAttribute(`data-lang-${currentLang}`);
+        if (text) el.textContent = text;
+      });
+    };
+    langToggle.addEventListener('click', switchLanguage);
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        const targetId = anchor.getAttribute('href');
+        if (targetId.length > 1) {
+          e.preventDefault();
+          document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form handler (spots)
+    const form = document.getElementById('spotForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      console.log('Submission', data);
+      status.classList.remove('hidden');
+      form.reset();
+    });
+
+    // Events data
+    const events = [
+      {
+        name: 'Rooftop Sunset Sessions',
+        type: 'DJ set / Mezcal pop-up',
+        date: new Date(new Date().setDate(new Date().getDate() + 1)),
+        time: '19:30',
+        location: 'Condesa rooftop',
+        cost: '$200 MXN cover',
+        contact: '@SkylineSergio',
+        image: 'https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?auto=format&fit=crop&w=900&q=80',
+        description: 'Sunset meets mezcal flights with vinyl selectors.'
+      },
+      {
+        name: 'Zona Rosa Neon Run',
+        type: 'Bar hop + live brass',
+        date: new Date(new Date().setDate(new Date().getDate() + 2)),
+        time: '21:00',
+        location: 'Zona Rosa',
+        cost: 'Free entry, buy drinks',
+        contact: '@ChaosCarlos',
+        image: 'https://images.unsplash.com/photo-1514361892635-6e122620e4d1?auto=format&fit=crop&w=900&q=80',
+        description: '5 stops, 1 brass band, questionable decisions guaranteed.'
+      },
+      {
+        name: 'Poker & Palomas',
+        type: 'Low-key gaming night',
+        date: new Date(new Date().setDate(new Date().getDate() + 5)),
+        time: '20:00',
+        location: 'Hidden lounge, Polanco',
+        cost: '$500 MXN buy-in',
+        contact: 'DM @cardsconisa',
+        image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80',
+        description: 'Small tables, good palomas, leave the sunglasses at home.'
+      },
+      {
+        name: 'Cantina Karaoke Chaos',
+        type: 'Cantina karaoke',
+        date: new Date(new Date().setDate(new Date().getDate() + 8)),
+        time: '22:00',
+        location: 'Centro',
+        cost: 'Cash only',
+        contact: '@mariachiman',
+        image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+        description: 'Belting rancheras with a giant michelada in hand.'
+      }
+    ];
+
+    const upcomingList = document.getElementById('upcomingList');
+    const calendarPicker = document.getElementById('calendarPicker');
+    const detailTitle = document.getElementById('detailTitle');
+    const detailMeta = document.getElementById('detailMeta');
+    const detailLocation = document.getElementById('detailLocation');
+    const detailCost = document.getElementById('detailCost');
+    const detailContact = document.getElementById('detailContact');
+    const detailDescription = document.getElementById('detailDescription');
+    const detailImage = document.getElementById('detailImage');
+
+    const formatDate = (date) => new Date(date).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+    const renderUpcoming = () => {
+      const today = new Date();
+      const seven = new Date();
+      seven.setDate(today.getDate() + 7);
+      const filtered = events.filter(ev => ev.date >= today && ev.date <= seven)
+        .sort((a,b) => a.date - b.date || a.time.localeCompare(b.time));
+      upcomingList.innerHTML = filtered.map((ev, idx) => `
+        <button class="w-full text-left glass border border-white/10 rounded-xl p-4 hover:border-[var(--neon)] transition" data-index="${idx}" data-source="upcoming">
+          <div class="flex items-center justify-between gap-2">
+            <p class="text-xs text-white/60">${formatDate(ev.date)} · ${ev.time}</p>
+            <span class="px-2 py-1 text-[10px] rounded-full bg-[var(--neon)]/20 text-[var(--neon)]">${ev.type}</span>
+          </div>
+          <p class="font-semibold">${ev.name}</p>
+          <p class="text-xs text-white/60">${ev.location}</p>
+        </button>
+      `).join('') || '<p class="text-white/60 text-sm">No events in the next 7 days yet. Add one!</p>';
+    };
+
+    const renderDateMatches = (dateStr) => {
+      const target = new Date(dateStr);
+      const matches = events.filter(ev => ev.date.toISOString().slice(0,10) === dateStr)
+        .sort((a,b) => a.time.localeCompare(b.time));
+      upcomingList.innerHTML = matches.map((ev, idx) => `
+        <button class="w-full text-left glass border border-white/10 rounded-xl p-4 hover:border-[var(--neon)] transition" data-index="${idx}" data-source="date">
+          <div class="flex items-center justify-between gap-2">
+            <p class="text-xs text-white/60">${formatDate(ev.date)} · ${ev.time}</p>
+            <span class="px-2 py-1 text-[10px] rounded-full bg-[var(--neon)]/20 text-[var(--neon)]">${ev.type}</span>
+          </div>
+          <p class="font-semibold">${ev.name}</p>
+          <p class="text-xs text-white/60">${ev.location}</p>
+        </button>
+      `).join('') || `<p class="text-white/60 text-sm">No events on ${target.toLocaleDateString()}. Add one below.</p>`;
+    };
+
+    const showDetail = (ev) => {
+      detailTitle.textContent = ev.name;
+      detailMeta.textContent = `${formatDate(ev.date)} · ${ev.time} · ${ev.type}`;
+      detailLocation.textContent = ev.location ? `Location: ${ev.location}` : '';
+      detailCost.textContent = ev.cost ? `Cost: ${ev.cost}` : '';
+      detailContact.textContent = ev.contact ? `Contact: ${ev.contact}` : '';
+      detailDescription.textContent = ev.description || '';
+      if (ev.image) detailImage.src = ev.image;
+    };
+
+    upcomingList.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-index]');
+      if (!btn) return;
+      const idx = Number(btn.dataset.index);
+      const ev = events[idx];
+      showDetail(ev);
+    });
+
+    calendarPicker.addEventListener('change', (e) => {
+      if (!e.target.value) { renderUpcoming(); return; }
+      renderDateMatches(e.target.value);
+    });
+
+    // Event submission
+    const newEventForm = document.getElementById('newEventForm');
+    const eventStatus = document.getElementById('eventStatus');
+    newEventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(newEventForm).entries());
+      const newDate = data.date ? new Date(data.date) : new Date();
+      const newEvent = {
+        name: data.name,
+        type: data.type,
+        date: newDate,
+        time: data.time || '00:00',
+        location: data.location,
+        cost: data.cost,
+        contact: data.contact,
+        image: data.image || 'https://images.unsplash.com/photo-1525198124871-0f9248947651?auto=format&fit=crop&w=900&q=80',
+        description: data.description
+      };
+      events.push(newEvent);
+      eventStatus.classList.remove('hidden');
+      newEventForm.reset();
+      renderUpcoming();
+      if (calendarPicker.value) renderDateMatches(calendarPicker.value);
+    });
+
+    // Initialize calendar default to today
+    const todayISO = new Date().toISOString().slice(0,10);
+    calendarPicker.value = todayISO;
+    renderDateMatches(todayISO);
+    showDetail(events[0]);
+  </script>
+</body>
+</html>
