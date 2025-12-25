@@ -202,10 +202,22 @@
             <h3 class="text-3xl font-bold" data-lang-en="Calendar + Immediate upcomers" data-lang-es="Calendario + Próximos inmediatos">Calendar + Immediate upcomers</h3>
             <p class="text-white/70" data-lang-en="Track the next 7 days, tap a date, see every detail—type, time, cost, contact, and pics." data-lang-es="Sigue los próximos 7 días, toca una fecha y ve todo: tipo, hora, costo, contacto e imágenes.">Track the next 7 days, tap a date, see every detail—type, time, cost, contact, and pics.</p>
           </div>
-          <div class="flex gap-2 text-sm">
+          <div class="flex gap-2 text-sm flex-wrap">
             <a href="#eventForm" class="px-4 py-2 rounded-full bg-[var(--neon)] text-deep font-semibold" data-lang-en="Upload your event" data-lang-es="Sube tu evento">Upload your event</a>
             <button class="px-4 py-2 rounded-full border border-white/20" onclick="document.getElementById('calendarPicker').focus();" data-lang-en="Open calendar" data-lang-es="Abrir calendario">Open calendar</button>
           </div>
+        </div>
+
+        <div class="glass rounded-2xl p-4 border border-white/10 grid md:grid-cols-[2fr_1fr] gap-3 text-sm">
+          <div>
+            <p class="font-semibold" data-lang-en="Calendly / Google Calendar hookup (optional)" data-lang-es="Integración Calendly / Google Calendar (opcional)">Calendly / Google Calendar hookup (optional)</p>
+            <p class="text-white/70" data-lang-en="Paste your token at runtime; never hardcode secrets on the client. Server proxy recommended." data-lang-es="Pega tu token en runtime; nunca lo dejes fijo en el cliente. Mejor usa un proxy en el servidor.">Paste your token at runtime; never hardcode secrets on the client. Server proxy recommended.</p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <input id="calendlyKey" type="password" class="flex-1 px-3 py-2 rounded-lg bg-black/40 border border-white/15" placeholder="Calendly personal access token" />
+            <button id="loadCalendlyBtn" class="px-4 py-2 rounded-lg bg-[var(--sunset)] font-semibold hover:brightness-110" data-lang-en="Load Calendly" data-lang-es="Cargar Calendly">Load Calendly</button>
+          </div>
+          <p class="text-xs text-white/60 md:col-span-2" data-lang-en="This demo loads mock events locally. For production, proxy Calendly API server-side with your token." data-lang-es="Esta demo carga eventos simulados. En producción, usa un proxy de servidor con tu token de Calendly.">This demo loads mock events locally. For production, proxy Calendly API server-side with your token.</p>
         </div>
 
         <div class="grid lg:grid-cols-3 gap-6">
@@ -218,6 +230,10 @@
               <div class="text-sm text-white/60" data-lang-en="Immediate upcomers (next 7 days)" data-lang-es="Próximos inmediatos (7 días)">Immediate upcomers (next 7 days)</div>
             </div>
             <div id="upcomingList" class="grid md:grid-cols-2 gap-4"></div>
+            <div class="glass rounded-xl border border-white/10 p-3 text-xs text-white/70">
+              <p class="font-semibold text-white" data-lang-en="Calendly fetch status" data-lang-es="Estado de carga Calendly">Calendly fetch status</p>
+              <p id="calendlyStatus">Waiting for token...</p>
+            </div>
           </div>
 
           <div class="glass rounded-2xl p-5 border border-white/10 space-y-3" id="eventDetail">
@@ -324,6 +340,56 @@
         </div>
       </div>
     </section>
+
+    <section id="growth" class="py-14 bg-black/40 border-t border-b border-white/10 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-[var(--sunset)]/10 via-transparent to-[var(--neon)]/10"></div>
+      <div class="mx-auto max-w-6xl px-4 grid lg:grid-cols-[1.2fr_1fr] gap-8 items-start relative">
+        <div class="space-y-4">
+          <p class="text-sm uppercase tracking-[0.25em] text-[var(--sunset)]" data-lang-en="Growth" data-lang-es="Crecimiento">Growth</p>
+          <h3 class="text-3xl font-bold" data-lang-en="Turn vibes into bookings" data-lang-es="Convierte la vibra en reservas">Turn vibes into bookings</h3>
+          <p class="text-white/70" data-lang-en="Free listing tier keeps the funnel wide. Sponsored highlights push you to the top when you need Friday filled." data-lang-es="El nivel gratis mantiene el funnel abierto. Los destacados patrocinados te suben al top cuando necesitas llenar el viernes.">Free listing tier keeps the funnel wide. Sponsored highlights push you to the top when you need Friday filled.</p>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="glass p-4 rounded-2xl border border-white/10">
+              <p class="text-xs uppercase text-white/50" data-lang-en="Starter" data-lang-es="Inicial">Starter</p>
+              <h4 class="font-semibold text-lg" data-lang-en="Free" data-lang-es="Gratis">Free</h4>
+              <ul class="mt-2 space-y-1 text-white/70">
+                <li data-lang-en="Basic listing" data-lang-es="Ficha básica">Basic listing</li>
+                <li data-lang-en="Email-verified" data-lang-es="Verificado por email">Email-verified</li>
+                <li data-lang-en="Community ratings" data-lang-es="Ratings de la comunidad">Community ratings</li>
+              </ul>
+            </div>
+            <div class="glass p-4 rounded-2xl border border-white/10 ring-1 ring-[var(--neon)]/50">
+              <p class="text-xs uppercase text-white/50" data-lang-en="Highlight" data-lang-es="Destacado">Highlight</p>
+              <h4 class="font-semibold text-lg" data-lang-en="MXN 800 / wk" data-lang-es="MXN 800 / sem">MXN 800 / wk</h4>
+              <ul class="mt-2 space-y-1 text-white/70">
+                <li data-lang-en="Homepage feature" data-lang-es="Destacado en home">Homepage feature</li>
+                <li data-lang-en="Slots capped for scarcity" data-lang-es="Cupos limitados">Slots capped for scarcity</li>
+                <li data-lang-en="CTA to book / RSVP" data-lang-es="CTA a reservar / RSVP">CTA to book / RSVP</li>
+              </ul>
+            </div>
+            <div class="glass p-4 rounded-2xl border border-white/10">
+              <p class="text-xs uppercase text-white/50" data-lang-en="Custom" data-lang-es="Personalizado">Custom</p>
+              <h4 class="font-semibold text-lg" data-lang-en="Talk to us" data-lang-es="Hablemos">Talk to us</h4>
+              <ul class="mt-2 space-y-1 text-white/70">
+                <li data-lang-en="Takeover nights" data-lang-es="Noches takeover">Takeover nights</li>
+                <li data-lang-en="Casino/gaming promos" data-lang-es="Promos casino/gaming">Casino/gaming promos</li>
+                <li data-lang-en="Bundles with events" data-lang-es="Paquetes con eventos">Bundles with events</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="glass rounded-2xl border border-white/10 p-5 space-y-4 text-sm">
+          <p class="text-xs uppercase tracking-[0.25em] text-[var(--neon)]" data-lang-en="Ready?" data-lang-es="¿Listo?">Ready?</p>
+          <h4 class="text-xl font-bold" data-lang-en="Drive more business without screaming \"PRICING\"" data-lang-es="Impulsa tu negocio sin gritar \"PRECIOS\"">Drive more business without screaming "PRICING"</h4>
+          <p class="text-white/70" data-lang-en="Slide into a highlight slot or ask for a bundle; we keep it lean so your budget stays under £500." data-lang-es="Entra a un slot destacado o pide un bundle; lo mantenemos ligero para mantenerte bajo £500.">Slide into a highlight slot or ask for a bundle; we keep it lean so your budget stays under £500.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#submit" class="px-4 py-3 rounded-xl bg-[var(--sunset)] font-semibold hover:brightness-110" data-lang-en="Start with free listing" data-lang-es="Empieza gratis">Start with free listing</a>
+            <button class="px-4 py-3 rounded-xl border border-white/20 hover:border-[var(--neon)]" onclick="openGrowthModal()" data-lang-en="See highlight options" data-lang-es="Ver opciones destacadas">See highlight options</button>
+          </div>
+          <div class="text-xs text-white/60" data-lang-en="Subtle? Sure. Effective? Yep." data-lang-es="¿Sutil? Sí. ¿Efectivo? También.">Subtle? Sure. Effective? Yep.</div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="py-10 bg-black/70 border-t border-white/10">
@@ -337,6 +403,7 @@
         <a href="#events" class="hover:text-[var(--neon)]" data-lang-en="Events" data-lang-es="Eventos">Events</a>
         <a href="#submit" class="hover:text-[var(--neon)]" data-lang-en="Submit" data-lang-es="Enviar">Submit</a>
         <a href="#map" class="hover:text-[var(--neon)]" data-lang-en="Safety map" data-lang-es="Mapa de seguridad">Safety map</a>
+        <a href="#growth" class="hover:text-[var(--neon)]" data-lang-en="Grow traffic" data-lang-es="Impulsa visitas">Grow traffic</a>
       </div>
       <p class="text-xs" data-lang-en="Beta concept. WordPress/HivePress backbone recommended." data-lang-es="Concepto beta. Recomendado WordPress/HivePress.">Beta concept. WordPress/HivePress backbone recommended.</p>
     </div>
@@ -375,6 +442,11 @@
       status.classList.remove('hidden');
       form.reset();
     });
+
+    // Growth modal
+    const openGrowthModal = () => {
+      alert('Ready to drive more business? Drop your handle in the Submit form and select Sponsored, or email hola@cdmxnights.fake for highlight slots.');
+    };
 
     // Events data
     const events = [
@@ -469,6 +541,44 @@
         </button>
       `).join('') || `<p class="text-white/60 text-sm">No events on ${target.toLocaleDateString()}. Add one below.</p>`;
     };
+
+    // Calendly integration (client-side demo; use server proxy in production)
+    const calendlyStatus = document.getElementById('calendlyStatus');
+    const calendlyKeyInput = document.getElementById('calendlyKey');
+    const loadCalendlyBtn = document.getElementById('loadCalendlyBtn');
+
+    loadCalendlyBtn?.addEventListener('click', async () => {
+      const token = calendlyKeyInput.value.trim();
+      if (!token) {
+        calendlyStatus.textContent = 'No token provided. Add your Calendly PAT.';
+        return;
+      }
+      calendlyStatus.textContent = 'Fetching events from Calendly (mocked)…';
+      try {
+        // Demo: simulate fetch. In production, call your server endpoint that proxies Calendly with Authorization: Bearer <token>
+        await new Promise(res => setTimeout(res, 1000));
+        const mockCalendly = [
+          {
+            name: 'Calendly: Mezcal Mixer',
+            type: 'Meetup',
+            date: new Date(new Date().setDate(new Date().getDate() + 3)),
+            time: '19:00',
+            location: 'Roma Norte',
+            cost: 'Free',
+            contact: '@calendly-host',
+            image: 'https://images.unsplash.com/photo-1514361892635-6e122620e4d1?auto=format&fit=crop&w=900&q=80',
+            description: 'Synced from Calendly. Replace mock with real API response.'
+          }
+        ];
+        mockCalendly.forEach(ev => events.push(ev));
+        renderUpcoming();
+        if (calendarPicker.value) renderDateMatches(calendarPicker.value);
+        calendlyStatus.textContent = 'Loaded mock Calendly events. Swap to real API via server proxy.';
+      } catch (err) {
+        console.error(err);
+        calendlyStatus.textContent = 'Failed to load Calendly events. Check token/server proxy.';
+      }
+    });
 
     const showDetail = (ev) => {
       detailTitle.textContent = ev.name;
